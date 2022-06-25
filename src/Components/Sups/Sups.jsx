@@ -37,23 +37,23 @@ const Sups = (props) => {
         }
     }
 
-    const escogePelicula = (pelicula) => {
+    const escogePelicula = (superheroe) => {
         
-        console.log(pelicula);
-        props.dispatch({type:MOVIE_DETAIL, payload: pelicula});
+        console.log(superheroe);
+        props.dispatch({type:MOVIE_DETAIL, payload: superheroe});
 
 
         navigate("/");
     }
 
-    if(supers[0]?.id != undefined){
+    if(supers[0]?.id !== undefined){
         return(
             <div className="">
 
                 {
                     supers.map(superheroe => {
                         return (
-                            <div className='' key={superheroe.id} onClick={()=>escogePelicula()}>
+                            <div className='' key={superheroe.id} onClick={()=>escogePelicula(superheroe)}>
                                 {superheroe.name}
                             </div>
                         )

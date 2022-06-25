@@ -36,11 +36,7 @@ const Register = () => {
 
     const registrame = async () => {
 
-
         setMsgError("");
-        let error = "";
-
-
 
         if (datosUsuario.contrasena !== datosUsuario.contrasena2) {
 

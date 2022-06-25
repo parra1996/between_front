@@ -10,8 +10,6 @@ import './Login.css';
 
 const Login = (props) => {
 
-
-
     let navigate = useNavigate();
 
     const [datosUsuario, setDatosUsuario] = useState({ usuario: "" });
@@ -62,6 +60,7 @@ const Login = (props) => {
                     <input type="text" name="usuario" id="usuario" placeholder="usuario" onChange={(e) => { rellenarDatos(e) }} /> <br />
                     {/* {msgError} */}
                     {msgError2}
+                    {msg}
                 </div><br />
                 <div className="bott">
                     <div color="teal" onClick={() => { login() }} >

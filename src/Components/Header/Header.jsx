@@ -1,19 +1,14 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LOGOUT } from '../../redux/types';
 import { connect } from 'react-redux';
-
-
-
-
 import './Header.css';
 
 const Header = (props) => {
 
     let navigate = useNavigate();
 
-    // const [nombre, setNombre] = useState("");
 
     useEffect(() => {
     })
