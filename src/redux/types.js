@@ -4,7 +4,8 @@ export const LOGOUT = 'logout';
 export const MODIFY_CREDENTIALS = 'modify_credentials';
 
 //////////////////////////////////////////
-///////// REDUX MANAGEMENT//////////
+/////////MOVIES REDUX MANAGEMENT//////////
 //////////////////////////////////////////
 
-export const RECETA_ESPECIFICA = 'receta especifica';
+export const MOVIE_DETAIL = 'movie_detail';
+export const MOVIES_TITLE = 'movies_title';

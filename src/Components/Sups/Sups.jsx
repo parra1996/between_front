@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { MOVIE_DETAIL } from '../../redux/types';
+
+import { useNavigate } from 'react-router-dom';
+
+
+import './Sups.css'
+
 
 const Sups = (props) => {
+    let navigate = useNavigate();
+
     const [supers, setSupers] = useState([]);
 
     useEffect(() => {
@@ -19,7 +28,7 @@ const Sups = (props) => {
 
             if (res) {
                 console.log(res, "ESTO ES RESSSSS")
-                setSupers(res.data)
+                setSupers(res.data.data.results)
             } else {
                 setSupers("hubo un error al renderizar los supers")
             }
@@ -28,25 +37,40 @@ const Sups = (props) => {
         }
     }
 
-    return (
-        <div className='Sups'>
-
-            QUE BUEN FOLLAO COÑO
+    const escogePelicula = (pelicula) => {
         
-            {/* {
-                supers.map(resultado => (
+        console.log(pelicula);
+        props.dispatch({type:MOVIE_DETAIL, payload: pelicula});
 
-                    <div className='mapeo' key={resultado.id}>
-                        <p>{resultado.data}</p>
-                    </div>
 
-                ))
+        navigate("/");
+    }
 
-            } */}
-            
-           
-        </div>
-    )
+    if(supers[0]?.id != undefined){
+        return(
+            <div className="">
+
+                {
+                    supers.map(superheroe => {
+                        return (
+                            <div className='' key={superheroe.id} onClick={()=>escogePelicula()}>
+                                {superheroe.name}
+                            </div>
+                        )
+                    })
+                }
+                
+            </div>
+        )
+    }else{
+        return (
+            <div className=''>
+                <div className="">
+                    CARGANDO
+                </div>
+            </div>
+        )
+    }
 
 }
 export default Sups;
