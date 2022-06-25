@@ -13,7 +13,7 @@ const Header = (props) => {
 
     let navigate = useNavigate();
 
-    const [nombre, setNombre] = useState("");
+    // const [nombre, setNombre] = useState("");
 
     useEffect(() => {
     })
@@ -28,19 +28,17 @@ const Header = (props) => {
     }
 
     const logOut = () => {
-        // props.dispatch({ type: LOGOUT });
+        props.dispatch({ type: LOGOUT });
 
         setTimeout(() => {
             navigate("/");
         }, 1500);
     }
 
-    const manejador = (ev) => {
-        setNombre(ev.target.value);
-    }
+   
 
     
-    if (!props.credentials?.token) {
+    if (!props.credentials?.usuario !== undefined) {
         return (
             <div className='header' >
                 <div className="headercitos" onClick={()=>navigate('/')}>
