@@ -1,10 +1,9 @@
 
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { LOGOUT } from '../../redux/types';
+import { LOGOUT } from '../../redux/types';
 import { connect } from 'react-redux';
 
-// import { Button } from '@mantine/core';
 
 
 
@@ -48,8 +47,8 @@ const Header = (props) => {
                    Home
                 </div>
                 <div className="headercitos">
-                {/* <Button color='teal' style={{pointer:'cursor'}} onClick={() => navegar("/login")}>Login</Button>&nbsp; */}
-                {/* <Button color='teal' style={{pointer:'cursor'}} onClick={() => navegar("/register")}>Register</Button>  */}
+                <div color='teal' style={{pointer:'cursor'}} onClick={() => navegar("/login")}>Login</div>&nbsp;
+                <div color='teal' style={{pointer:'cursor'}} onClick={() => navegar("/register")}>Register</div> 
                 </div>
                 <div className="headercitos">
                 </div>
@@ -62,8 +61,8 @@ const Header = (props) => {
                    Home
                 </div>
                 <div className="headercitos">
-                {/* <Button color="teal" style={{pointer:'cursor'}} onClick={() => navegar("/perfil")}>{props.credentials?.usuario.nombre} {props.credentials?.usuario.apellido}</Button>&nbsp; */}
-                {/* <Button color="teal" style={{pointer:'cursor'}} onClick={() => logOut()}>LogOut</Button>&nbsp; */}
+                <div color="teal" style={{pointer:'cursor'}} onClick={() => navegar("/perfil")}>{props.credentials?.usuario.nombre} {props.credentials?.usuario.apellido}</div>&nbsp;
+                <div color="teal" style={{pointer:'cursor'}} onClick={() => logOut()}>LogOut</div>&nbsp;
                 </div>
                 <div className="headercitos"></div>
             </div>
