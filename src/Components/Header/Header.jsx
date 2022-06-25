@@ -38,7 +38,7 @@ const Header = (props) => {
    
 
     
-    if (!props.credentials?.usuario !== undefined) {
+    if (!props.credentials?.usuario) {
         return (
             <div className='header' >
                 <div className="headercitos" onClick={()=>navigate('/')}>
@@ -59,7 +59,7 @@ const Header = (props) => {
                    Home
                 </div>
                 <div className="headercitos">
-                <div color="teal" style={{pointer:'cursor'}} onClick={() => navegar("/perfil")}>{props.credentials?.usuario.nombre} {props.credentials?.usuario.apellido}</div>&nbsp;
+                <div color="teal" style={{pointer:'cursor'}} onClick={() => navegar("/perfil")}>{props.credentials?.usuario.nombre} {props.credentials?.usuario.apellido} "{props.credentials?.usuario.usuario}"</div>&nbsp;
                 <div color="teal" style={{pointer:'cursor'}} onClick={() => logOut()}>LogOut</div>&nbsp;
                 </div>
                 <div className="headercitos"></div>

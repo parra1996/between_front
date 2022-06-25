@@ -35,9 +35,10 @@ const Login = (props) => {
                 usuario: datosUsuario.usuario,
             }
             let resultado = await axios.post("http://localhost:5000/usuarios/login", body);
+            console.log(resultado,"ESTO ES LOGINNNNNN")
 
 
-            if (resultado.data === "Usuario o contraseña inválido") {
+            if (resultado.data === "Usuario inválido") {
                 setMsgError2("Usuario o contraseña inválido")
             } else {
                 setMsg("logegado con exito!")
