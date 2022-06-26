@@ -11,28 +11,28 @@ const Super_detallado = (props) => {
 
     useEffect(() => {
 
-        if (props.search?.name === undefined) {
-            navigate('/');
-        }
+        // if (props.search?.nombre === undefined) {
+        //     navigate('/');
+        // }
     });
 
     return (
-        <div className='designFilm'>
-            <div className='cuadroGeneral'>
-                <div className="filmDetailHalf">
-                    <div className="dataFilm"><p className='tituloPel'>{props.search.name}</p></div>
-                    <div className="dataFilm"><p className='sinopsisPel'>{props.search.description}</p></div>
-                    <div className="dataFilm">
+        <div className='super_detallado'>
+                <div className="carta">
+                    <div>Nombre: {props.search.nombre}</div>
+                    <div>Descripcion: {props.search.descripcion}</div>
+                    <div>Numero de comics en el que aparece: {props.search.n_comics}</div>
+                    <div>Nombre de los comics: {props.search.comics}</div>
+                    <div>
                         {
                             //EN CASO DE QUE TOKEN SEA TRUE, SI SE INCLUYE EL ELEMENTO RENT
                             // props.credentials.token && <Rent id={props.search.id} token={props.credentials.token} idUser={props.credentials.usuario.id} />
                         }
                     </div>
                 </div>
-                <div className="filmDetailHalf right">
-                    <img className='cartel2' src={props.search.image} alt={props.search.titulo} />
+                <div className="">
+                    <img className='imagen_sup' src={`${props.search.imagen}.${props.search.extension}`} alt={props.search.titulo} />
                 </div>
-            </div>
         </div>
     )
 

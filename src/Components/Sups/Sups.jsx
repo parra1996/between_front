@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { MOVIE_DETAIL } from '../../redux/types';
+import { connect } from 'react-redux';
 
 import { useNavigate } from 'react-router-dom';
-
 
 import './Sups.css'
 
 
 const Sups = (props) => {
+
     let navigate = useNavigate();
 
     const [supers, setSupers] = useState([]);
@@ -28,6 +29,9 @@ const Sups = (props) => {
 
             if (resultado) {
                 console.log(resultado.data, "ESTO ES RESSSSS")
+                if(resultado.data.descripcion === ""){
+                    resultado.data.descripcion = "No hay descripcion"
+                }
                 setSupers(resultado.data)
             } else {
                 setSupers("hubo un error al renderizar los supers")
@@ -38,13 +42,13 @@ const Sups = (props) => {
         }
     }
 
-    const escogePelicula = (superheroe) => {
+    const escogePelicula = (pelicula) => {
         
-        console.log(superheroe);
-        props.dispatch({type:MOVIE_DETAIL, payload: superheroe});
+        console.log(pelicula);
+        props.dispatch({type:MOVIE_DETAIL, payload: pelicula});
 
 
-        navigate("/Super_detallado");
+        navigate("/super_detallado");
         
     }
 
@@ -56,7 +60,7 @@ const Sups = (props) => {
                     supers.map(superheroe => {
                         return (
                             <div className='' key={superheroe.id} onClick={()=>escogePelicula(superheroe)}>
-                                <img className='imagen' src={`${superheroe.imagen}.${superheroe.extension}`} alt=""/>
+                                <img className='imagen' src={`${superheroe.imagen}.${superheroe.extension}`} alt={superheroe.nombre}/> <br/>
                                 {superheroe.nombre}
                             </div>
                         )
@@ -76,4 +80,5 @@ const Sups = (props) => {
     }
 
 }
-export default Sups;
+
+export default connect()(Sups);

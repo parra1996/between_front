@@ -1,0 +1,29 @@
+.super_detallado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: lightblue;
+}
+
+.imagen_sup {
+    height: 20em;
+    width: 20em;
+
+    cursor: pointer;
+
+}
+
+.carta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: auto;
+    width: 100vw;
+}

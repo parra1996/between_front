@@ -18,4 +18,16 @@
 .imagen {
     height: 10em;
     width: 10em;
+
+    cursor: pointer;
+}
+
+
+.imagen:hover {
+    height: 12em;
+    width: 12em;
+
+    transition: .3s;
+
+    cursor: pointer;
 }
