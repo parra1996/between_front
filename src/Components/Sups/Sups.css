@@ -1,6 +1,21 @@
+.sups {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: auto;
+    width: 100vw;
+}
+
 .mapeo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.imagen {
+    height: 10em;
+    width: 10em;
 }

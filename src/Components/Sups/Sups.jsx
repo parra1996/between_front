@@ -24,16 +24,17 @@ const Sups = (props) => {
     const traer_sups = async (req, res) => {
 
         try {
-            let res = await axios.get("https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=477572bbc4000049e3379ce86acc7407&hash=2122799baa4ed02346ae71808f7c6260")
+            let resultado = await axios.get("http://localhost:5000/supers/traer")
 
-            if (res) {
-                console.log(res, "ESTO ES RESSSSS")
-                setSupers(res.data.data.results)
+            if (resultado) {
+                console.log(resultado.data, "ESTO ES RESSSSS")
+                setSupers(resultado.data)
             } else {
                 setSupers("hubo un error al renderizar los supers")
             }
         } catch (error) {
             res.send(error)
+            console.log(error)
         }
     }
 
@@ -43,18 +44,20 @@ const Sups = (props) => {
         props.dispatch({type:MOVIE_DETAIL, payload: superheroe});
 
 
-        navigate("/");
+        navigate("/Super_detallado");
+        
     }
 
     if(supers[0]?.id !== undefined){
         return(
-            <div className="">
+            <div className="sups">
 
                 {
                     supers.map(superheroe => {
                         return (
                             <div className='' key={superheroe.id} onClick={()=>escogePelicula(superheroe)}>
-                                {superheroe.name}
+                                <img className='imagen' src={`${superheroe.imagen}.${superheroe.extension}`} alt=""/>
+                                {superheroe.nombre}
                             </div>
                         )
                     })
