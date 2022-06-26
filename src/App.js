@@ -6,6 +6,7 @@ import Register from './Container/Register/Register';
 import Header from './Components/Header/Header';
 import Login from './Container/Login/Login';
 import Super_detallado from './Container/Super_detallado/Super_detallado';
+import Perfil from './Container/Perfil/Perfil';
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path={"/register"} element={<Register/>} />
         <Route path={"/login"} element={<Login/>} />
         <Route path={"/super_detallado"} element={<Super_detallado/>} />
+        <Route path={"/perfil"} element={<Perfil/>} />
+        
 
       </Routes>
       

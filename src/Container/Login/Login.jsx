@@ -14,7 +14,6 @@ const Login = (props) => {
 
     const [datosUsuario, setDatosUsuario] = useState({ usuario: "" });
     const [msgError2, setMsgError2] = useState("");
-    const [msg, setMsg] = useState("");
 
 
 
@@ -39,7 +38,7 @@ const Login = (props) => {
             if (resultado.data === "Usuario inválido") {
                 setMsgError2("Usuario o contraseña inválido")
             } else {
-                setMsg("logegado con exito!")
+                setMsgError2("logegado con exito!")
                 props.dispatch({ type: LOGIN, payload: resultado.data });
                 setTimeout(() => {
                     
@@ -60,7 +59,6 @@ const Login = (props) => {
                     <input type="text" name="usuario" id="usuario" placeholder="usuario" onChange={(e) => { rellenarDatos(e) }} /> <br />
                     {/* {msgError} */}
                     {msgError2}
-                    {msg}
                 </div><br />
                 <div className="bott">
                     <div color="teal" onClick={() => { login() }} >

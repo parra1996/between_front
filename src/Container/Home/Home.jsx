@@ -14,7 +14,7 @@ const Home = (props) => {
         if (props.credentials.usuario !== null) {
             setMensaje(`Bienvenido ${props.credentials?.usuario.nombre} ${props.credentials?.usuario.apellido}`);
         }else {
-            navigate("/register");
+            navigate("/login");
 
         }
     }, []);

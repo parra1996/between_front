@@ -25,6 +25,7 @@ const Header = (props) => {
     const logOut = () => {
         props.dispatch({ type: LOGOUT });
 
+        window.location.reload();
         setTimeout(() => {
             navigate("/");
         }, 1500);

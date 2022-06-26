@@ -1,0 +1,18 @@
+.perfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: lightblue;
+}
+
+.borrar {
+    height: 3em;
+    width: 3em; 
+
+    background-color: red;
+}
