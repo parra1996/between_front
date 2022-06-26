@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Fav from '../../Components/Fav/Fav';
 
 import './Super_detallado.css';
 
@@ -25,8 +26,7 @@ const Super_detallado = (props) => {
                     <div>Nombre de los comics: {props.search.comics}</div>
                     <div>
                         {
-                            //EN CASO DE QUE TOKEN SEA TRUE, SI SE INCLUYE EL ELEMENTO RENT
-                            // props.credentials.token && <Rent id={props.search.id} token={props.credentials.token} idUser={props.credentials.usuario.id} />
+                           <Fav superId={props.search.id} usuarioId={props.credentials.usuario.id} />
                         }
                     </div>
                 </div>
