@@ -1,7 +1,6 @@
 
-import React, {useEffect,useState} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
 
 import './Fav.css';
 
@@ -23,14 +22,12 @@ const Fav = (props) => {
             usuarioId: props.usuarioId,
         }
 
-        console.log(body);
 
         try {
 
             let res = await axios.post("http://localhost:5000/favs",body);
 
             if(res){
-                console.log(res);
                 setMensaje("le has dado a favorito");
                 setLiked(true);
 
@@ -40,13 +37,12 @@ const Fav = (props) => {
             }
 
         } catch (error) {
-            console.log(error)
+           return(error)
         }
     }
 
 
     return (
-        
         <div style={{
             height: "3em",
             width: "3em",
@@ -54,10 +50,6 @@ const Fav = (props) => {
             border : '1px solid black',
             color: liked ? 'white' : 'black',
         }} onClick={()=>fav()}>Fav</div>
-
-
-       
-
         
     )
 }

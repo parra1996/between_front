@@ -9,12 +9,11 @@ import './Super_detallado.css';
 const Super_detallado = (props) => {
 
     let navigate = useNavigate();
+    const [mensaje,setMensaje] = useState("");
 
     useEffect(() => {
 
-        // if (props.search?.nombre === undefined) {
-        //     navigate('/');
-        // }
+        
     });
 
     return (
@@ -22,7 +21,6 @@ const Super_detallado = (props) => {
                 <div className="carta">
                     <div>Nombre: {props.search.nombre}</div>
                     <div>Descripcion: {props.search.descripcion}</div>
-                    <div>Numero de comics en el que aparece: {props.search.n_comics}</div>
                     <div>Nombre de los comics: {props.search.comics}</div>
                     <div>
                         {
@@ -33,6 +31,7 @@ const Super_detallado = (props) => {
                 <div className="">
                     <img className='imagen_sup' src={`${props.search.imagen}.${props.search.extension}`} alt={props.search.titulo} />
                 </div>
+                {props.mensaje}
         </div>
     )
 

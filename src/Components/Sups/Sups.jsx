@@ -28,8 +28,7 @@ const Sups = (props) => {
             let resultado = await axios.get("http://localhost:5000/supers/traer")
 
             if (resultado) {
-                console.log(resultado.data, "ESTO ES RESSSSS")
-                if(resultado.data.descripcion === ""){
+                if (resultado.data.descripcion === "") {
                     resultado.data.descripcion = "No hay descripcion"
                 }
                 setSupers(resultado.data)
@@ -38,39 +37,37 @@ const Sups = (props) => {
             }
         } catch (error) {
             res.send(error)
-            console.log(error)
         }
     }
 
     const escogePelicula = (pelicula) => {
-        
-        console.log(pelicula);
-        props.dispatch({type:SUPER_DETAIL, payload: pelicula});
+
+        props.dispatch({ type: SUPER_DETAIL, payload: pelicula });
 
 
         navigate("/super_detallado");
-        
+
     }
 
-    if(supers[0]?.id !== undefined){
-        return(
+    if (supers[0]?.id !== undefined) {
+        return (
             <div className="sups">
 
-            <ul>
-                {
-                    supers.map(superheroe => {
-                        return (
-                            <div className='lista' key={superheroe.id} onClick={()=>escogePelicula(superheroe)}>
-                               <li>{superheroe.nombre}</li> 
-                            </div>
-                        )
-                    })
-                }
+                <ul>
+                    {
+                        supers.map(superheroe => {
+                            return (
+                                <div className='lista' key={superheroe.id} onClick={() => escogePelicula(superheroe)}>
+                                    <li>{superheroe.nombre}</li>
+                                </div>
+                            )
+                        })
+                    }
                 </ul>
-                
+
             </div>
         )
-    }else{
+    } else {
         return (
             <div className=''>
                 <div className="">

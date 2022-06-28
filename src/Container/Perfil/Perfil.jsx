@@ -1,8 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { MODIFY_CREDENTIALS } from '../../redux/types';
 import axios from 'axios';
 
 import "./Perfil.css";
@@ -11,7 +9,6 @@ const Perfil = (props) => {
 
     const [favs,setFavs] = useState([]);
     const [mensaje, setMensaje] = useState("");
-    let navigate = useNavigate();
 
     useEffect(() => {
         mostrar_favs();
@@ -29,15 +26,12 @@ const Perfil = (props) => {
 
         let res = await axios.get(`http://localhost:5000/favs/${id}`);
 
-        console.log(res.data, "ESTO ES FAVS");
-        console.log(id, "ESTO ES id");
 
         setFavs(res.data);
     }
 
     const borrar_fav = async (id) => {
-        let res = await axios.delete(`http://localhost:5000/favs/${id}`);
-        console.log(res.data, "ESTO ES FAVS");
+         await axios.delete(`http://localhost:5000/favs/${id}`);
         setMensaje("Se ha borrado el fav");
         mostrar_favs();
     }
@@ -52,7 +46,7 @@ const Perfil = (props) => {
             </div>
             <div className="designProfileHalf profileRight">
                 <div>
-                    <p>Lista de tus favs, {props.credentials.usuario.nombre}</p>
+                    <h1>Lista de tus favs, {props.credentials.usuario.nombre}</h1>
                     {
                         favs.map(data => {
                             return (
@@ -64,6 +58,7 @@ const Perfil = (props) => {
                         })
                     }
                 </div>
+                {mensaje}
             </div>
 
             <div>

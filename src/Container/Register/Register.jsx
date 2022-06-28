@@ -68,13 +68,13 @@ const Register = () => {
             }, 3000);
 
         } catch (error) {
-            console.log(error);
+            return(error);
         }
     }
 
     return (
         <div className='register'>
-            <p>Debes estar logeado para poder ver a los superheroes de Marvel ;) </p>
+            
             <input variant="default" style={{ padding: '.5em' }} name="nombre" placeholder="nombre" color='teal' onChange={(e) => { rellenarDatos(e) }} />
             <input variant="default" style={{ padding: '.5em' }} name="apellido" placeholder="apellido" color='teal' onChange={(e) => { rellenarDatos(e) }} />
             <input variant="default" style={{ padding: '.5em' }} name="usuario" placeholder="usuario" color='teal' onChange={(e) => { rellenarDatos(e) }} />

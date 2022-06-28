@@ -32,7 +32,6 @@ const Login = (props) => {
                 usuario: datosUsuario.usuario,
             }
             let resultado = await axios.post("http://localhost:5000/usuarios/login", body);
-            console.log(resultado,"ESTO ES LOGINNNNNN")
 
 
             if (resultado.data === "Usuario inválido") {
@@ -47,13 +46,14 @@ const Login = (props) => {
             }
 
         } catch (error) {
-            console.log(error)
+            return(error)
         }
     };
 
     return (
 
         <div className='login'>
+            <p>Debes estar logeado para poder ver a los superheroes de Marvel ;) </p>
             <div className="designFormulario">
                 <div className="form">
                     <input type="text" name="usuario" id="usuario" placeholder="usuario" onChange={(e) => { rellenarDatos(e) }} /> <br />
@@ -61,6 +61,7 @@ const Login = (props) => {
                     {msgError2}
                 </div><br />
                 <div className="bott">
+
                     <div color="teal" onClick={() => { login() }} >
                         Login
                     </div>
