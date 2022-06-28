@@ -8,7 +8,13 @@ import './Fav.css';
 const Fav = (props) => {
 
     const [mensaje, setMensaje] = useState('');
-    let navigate = useNavigate();
+
+    const [liked,setLiked] = useState(false);
+
+    
+    const handleclik = ()=> {
+        setLiked(true);
+    }
 
     const fav = async () => {
         
@@ -26,11 +32,9 @@ const Fav = (props) => {
             if(res){
                 console.log(res);
                 setMensaje("le has dado a favorito");
+                setLiked(true);
 
-                setTimeout(() => {
-                    navigate("/");
-                }, 2000);
-                
+                handleclik();
             }else{
                 setMensaje("no se ha podido dar a favorito");
             }
@@ -40,8 +44,21 @@ const Fav = (props) => {
         }
     }
 
+
     return (
-        <div className="meGusta" onClick={()=>fav()}>Fav</div>
+        
+        <div style={{
+            height: "3em",
+            width: "3em",
+            backgroundColor: liked ? 'red' : 'transparent',
+            border : '1px solid black',
+            color: liked ? 'white' : 'black',
+        }} onClick={()=>fav()}>Fav</div>
+
+
+       
+
+        
     )
 }
 

@@ -56,16 +56,17 @@ const Sups = (props) => {
         return(
             <div className="sups">
 
+            <ul>
                 {
                     supers.map(superheroe => {
                         return (
-                            <div className='' key={superheroe.id} onClick={()=>escogePelicula(superheroe)}>
-                                <img className='imagen' src={`${superheroe.imagen}.${superheroe.extension}`} alt={superheroe.nombre}/> <br/>
-                                {superheroe.nombre}
+                            <div className='lista' key={superheroe.id} onClick={()=>escogePelicula(superheroe)}>
+                               <li>{superheroe.nombre}</li> 
                             </div>
                         )
                     })
                 }
+                </ul>
                 
             </div>
         )

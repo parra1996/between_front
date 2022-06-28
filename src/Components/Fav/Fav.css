@@ -2,5 +2,10 @@
     height: 3em;
     width: 3em;
 
-    background-color: red;
+    background-color: transparent;
+    border: solid gray 1px;
+
+    color: pink;
+
+    cursor: pointer;
 }

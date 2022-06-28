@@ -15,6 +15,11 @@
     align-items: center;
 }
 
+.lista {
+    cursor: pointer;
+    margin-top: 1em;
+}
+
 .imagen {
     height: 10em;
     width: 10em;

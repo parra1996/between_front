@@ -54,13 +54,11 @@ const Perfil = (props) => {
                 <div>
                     <p>Lista de tus favs, {props.credentials.usuario.nombre}</p>
                     {
-                        favs.map(pedidos => {
+                        favs.map(data => {
                             return (
-                                    <div className="" key={pedidos.id}>
-                                        id:{pedidos.id}.
-                                        {console.log(pedidos.id, "este es el id papa")}
-                                            Title: {pedidos.nombre}.
-                                            <div className="borrar" onClick={()=>borrar_fav(pedidos.id)}></div>
+                                    <div className="" key={data.id}>
+                                            Nombre del super: {data.nombre}. 
+                                            <div className="borrar" onClick={()=>borrar_fav(data.id)}></div>
                                     </div>
                             )
                         })
