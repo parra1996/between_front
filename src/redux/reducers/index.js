@@ -2,7 +2,7 @@
 import {combineReducers} from 'redux';
 
 import credentials from './datosLogin-reducer';
-import search from './busquedaFilms-reducer';
+import search from './busquedaSups-reducer';
 
 const rootReducer = combineReducers({
     credentials,

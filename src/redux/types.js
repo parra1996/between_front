@@ -7,5 +7,5 @@ export const MODIFY_CREDENTIALS = 'modify_credentials';
 /////////MOVIES REDUX MANAGEMENT//////////
 //////////////////////////////////////////
 
-export const MOVIE_DETAIL = 'movie_detail';
+export const SUPER_DETAIL = 'super_detail';
 export const MOVIES_TITLE = 'movies_title';

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { MOVIE_DETAIL } from '../../redux/types';
+import { SUPER_DETAIL } from '../../redux/types';
 import { connect } from 'react-redux';
 
 import { useNavigate } from 'react-router-dom';
@@ -45,7 +45,7 @@ const Sups = (props) => {
     const escogePelicula = (pelicula) => {
         
         console.log(pelicula);
-        props.dispatch({type:MOVIE_DETAIL, payload: pelicula});
+        props.dispatch({type:SUPER_DETAIL, payload: pelicula});
 
 
         navigate("/super_detallado");

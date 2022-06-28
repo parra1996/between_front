@@ -1,14 +1,14 @@
-import {MOVIE_DETAIL,MOVIES_TITLE} from '../types';
+import {SUPER_DETAIL,MOVIES_TITLE} from '../types';
 
 const initialState = {
     film: {},
     peliculas : []
 };
 
-const busquedaFilmsReducer = (state = initialState, action) => {
+const busquedaSupsReducer = (state = initialState, action) => {
     switch(action.type){
         //GUARDO EN EL ESTADO LOS DATOS DEL USUARIO LOGUEADO
-        case MOVIE_DETAIL :
+        case SUPER_DETAIL :
             return action.payload;
 
         case MOVIES_TITLE :
@@ -19,4 +19,4 @@ const busquedaFilmsReducer = (state = initialState, action) => {
     }
 }
 
-export default busquedaFilmsReducer;
+export default busquedaSupsReducer;
